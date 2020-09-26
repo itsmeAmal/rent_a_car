@@ -7,7 +7,7 @@ package com.rac.daoimpl;
 
 import com.rac.dao.VehicleCategoryDao;
 import com.rac.model.VehicleCategory;
-import com.ttms.databaseConnection.DatabaseConnection;
+import com.rac.databaseConnection.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

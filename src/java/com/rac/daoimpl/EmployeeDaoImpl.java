@@ -7,7 +7,7 @@ package com.rac.daoimpl;
 
 import com.rac.dao.EmployeeDao;
 import com.rac.model.Employee;
-import com.ttms.databaseConnection.DatabaseConnection;
+import com.rac.databaseConnection.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
