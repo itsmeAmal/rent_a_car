@@ -1,10 +1,4 @@
-<%-- 
-    Document   : navigationBar
-    Created on : Apr 30, 2020, 8:17:34 PM
-    Author     : Chamalki Madushika
---%>
-
-<%@page import="com.cms.model.User"%>
+<%@page import="com.rac.model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,11 +24,11 @@
     </head>
     <body>
         <%
-            HttpSession ses = request.getSession();
-            User user = (User) ses.getAttribute("loggedUser");
+//            HttpSession ses = request.getSession();
+//            User user = (User) ses.getAttribute("loggedUser");
         %>
         <nav class="navbar card text-white bg-info mb-3 fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar ">
-            <a class="navbar-brand" href="dashboard.jsp"><strong>C M S DASHBOARD<span class="sr-only">(current)</span></strong></a>
+            <a class="navbar-brand" href="dashboard.jsp"><strong>RENT-A-CAR DASHBOARD<span class="sr-only">(current)</span></strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -42,13 +36,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <%
-                        if (user.getUserType() == User.USER_TYPE_ADMIN || user.getUserType() == User.USER_TYPE_MANAGER) {
+//                        if (user.getUserType() == User.USER_TYPE_ADMIN || user.getUserType() == User.USER_TYPE_MANAGER) {
                     %>
                     <li class="nav-item">
-                        <a class="nav-link" href="userManagement.jsp">Manage Users </a>
+                        <a class="nav-link" href="userManagement.jsp">Users </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="clientManagement.jsp">Manage Clients</a>
+                        <a class="nav-link" href="clientManagement.jsp">Vehicles</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="addIssueCheque.jsp">Manage Cheques</a>
@@ -60,7 +54,7 @@
                         <a class="nav-link" href="addClient.jsp">Add Clients</a>
                     </li>
                     <%
-                    } else if (user.getUserType() == User.USER_TYPE_USER || user.getUserType() == User.USER_TYPE_GUEST) {
+//                    } else if (user.getUserType() == User.USER_TYPE_USER || user.getUserType() == User.USER_TYPE_GUEST) {
                     %>
                     <li class="nav-item">
                         <a class="nav-link" href="addIssueCheque.jsp">Manage Cheques</a>
@@ -69,7 +63,7 @@
                         <a class="nav-link" href="addClient.jsp">Add Clients</a>
                     </li>
                     <%
-                    }
+//                    }
                     %>
 
                 </ul>
@@ -88,13 +82,13 @@
                 <ul class="navbar-nav nav-flex-icons" style="position: absolute; left: 80%; top: 58%; width: 300px; height: 60px;">
                     <li class="nav-item">
                         <%
-                            if (user != null) {
+//                            if (user != null) {
                         %>
-                    <li><a href="#" style="color: #ffffff"><span class="glyphicon glyphicon-log-in"></span><b>Hi, <%=user.getUserName()%></b> </a></li>
+                    <li><a href="#" style="color: #ffffff"><span class="glyphicon glyphicon-log-in"></span><b>Hi, </b> </a></li>
                                 <%
-                                    } else {
-                                        response.sendRedirect("login.jsp");
-                                    }
+//                                    } else {
+//                                        response.sendRedirect("login.jsp");
+//                                    }
                                 %>
                     </li>
                 </ul>

@@ -16,10 +16,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- *
- * @author Amal
- */
 public class InvoiceDaoImpl implements InvoiceDao {
 
     private String selectQuery = "select invoice_id, invoice_date, invoice_time, "

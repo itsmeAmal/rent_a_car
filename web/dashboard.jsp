@@ -1,5 +1,3 @@
-
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -96,19 +94,6 @@
         <!--9 big white box-->
         <div style="position: fixed; left: 0%; top: 6%; width: 100%; height: 100%; z-index:-1">
         </div>
-
-        
-        <%@include file="loginHistory_menu.jsp" %>
-        <%@include file="analiticalTiles_menu.jsp" %>
-        <%@include file="activeUsers_menu.jsp" %>
-        <%@include file="receivedChequesWithinOneWeek_menu.jsp" %>
-
         <div style="position: absolute; left: 40%; top: 15%; width: 20%; height: 15px"></div>
-        <%@include file="barChart.jsp" %>
-        
-        <%@include file="analiticalTiles_menu.jsp" %>
-        <%@include file="receivedChequesWithinOneWeek_menu.jsp" %>
-        
-
     </body>
 </html>
