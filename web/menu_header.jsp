@@ -37,6 +37,7 @@
         <div class="topnav">
             <a class="active" href="#home">Home</a>
             <a href="#news">Rent a Car</a>
+            <a href="register_customer.jsp">Sign In</a>
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
         </div>
