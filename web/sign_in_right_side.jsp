@@ -67,7 +67,7 @@
         </style>
     </head>
     <body>
-        <div style="position: absolute; left: 70%; top: 10%; width: 25%">
+        <div style="position: absolute; left: 2%; top: 10%; width: 25%">
             <form action="/action_page.php" method="post">
                 <div class="imgcontainer">
                     <img src="slider-images/avatar.png" alt="Avatar" class="avatar">

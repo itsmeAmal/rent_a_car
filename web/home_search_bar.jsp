@@ -9,16 +9,16 @@
             }
 
             * {
-                box-sizing: border-box;
+                /*box-sizing: border-box;*/
             }
 
             form.example input[type=text] {
                 padding: 10px;
                 font-size: 17px;
-                border: 1px solid grey;
+                border: 0px solid grey;
                 float: left;
                 width: 80%;
-                /*background: #f1f1f1;*/
+                background: #f1f1f1;
             }
 
             form.example button {
@@ -45,8 +45,8 @@
         </style>
     </head>
     <body>
-        <div style="position: absolute; top: 80%; width: 100%; height: 30%;">
-            <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+        <div style="position: absolute; top: 10%; width: 100%; height: 30%;">
+            <form class="example" action="#" style="margin:auto;max-width:300px">
                 <input type="text" placeholder="Search your vehicle.." name="search2">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form> 

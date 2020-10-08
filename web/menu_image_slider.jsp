@@ -75,29 +75,28 @@
         </style>
     </head>
     <body>
-        <div class="slideshow-container">
-
+        <div class="slideshow-container" style="position: relative; top: 20%;">
             <div class="mySlides fade">
                 <div class="numbertext">1 / 3</div>
                 <img src="slider-images/1.jpg" style="width:100%">
-                <div class="text">Caption Text</div>
+                <div class="text">For your special moment</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">2 / 3</div>
                 <img src="slider-images/2.jpg" style="width:100%">
-                <div class="text">Caption Two</div>
+                <div class="text">Your dream vehicle is here</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">3 / 3</div>
                 <img src="slider-images/3.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
+                <div class="text">Rent now | Affordable prices </div>
             </div>
         </div>
         <br>
         
-        <div style="text-align:center">
+        <div style="text-align:center; position: relative">
             <span class="dot"></span> 
             <span class="dot"></span> 
             <span class="dot"></span> 
