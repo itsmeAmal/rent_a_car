@@ -26,7 +26,7 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public boolean AddCustomer(Customer Customer) throws SQLException {
         Connection con = DatabaseConnection.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("insert into customer (customer_id, customer_name, "
+        PreparedStatement ps = con.prepareStatement("insert into customers (customer_id, customer_name, "
                 + "customer_email, customer_contact_no, customer_address, customer_status, customer_detail) "
                 + "values (?,?,?,?,?,?,?)");
         ps.setInt(1, Customer.getId());
