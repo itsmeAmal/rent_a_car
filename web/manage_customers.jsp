@@ -112,5 +112,30 @@
                 <button class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding" style="position: relative; left: 10%; width: 80%">Send</button>
             </form>
         </div>
+        <div class="container" style="position: absolute; left: 50%; top: 10%; width: 45%; height: 100%">
+            <h2>Contextual Classes</h2>
+            <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success, .info, .warning, and .danger.</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                        <th>Update as Inactive</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Default</td>
+                        <td>Defaultson</td>
+                        <td>def@somemail.com</td>
+                        <td><button class="btn info">Info</button></td>
+                        <td><button class="btn danger">Danger</button>
+                        </td>
+                    </tr>      
+                </tbody>
+            </table>
+        </div>
     </body>
 </html> 

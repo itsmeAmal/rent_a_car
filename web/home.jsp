@@ -9,6 +9,7 @@
             <%@include file="menu_header.jsp"%>
             <%@include file="menu_image_slider.jsp" %>
             <%@include file="sign_in_right_side.jsp" %>
+            <%@include file="home_feedback.jsp" %>
             <%@include file="home_search_bar.jsp" %>
         </div>
     </body>
