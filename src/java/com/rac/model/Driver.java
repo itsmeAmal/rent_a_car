@@ -11,7 +11,7 @@ package com.rac.model;
  */
 public class Driver {
     private int id;
-    private int name;
+    private String name;
     private int regDate;
     private String email;
     private String address;
@@ -35,14 +35,14 @@ public class Driver {
     /**
      * @return the name
      */
-    public int getName() {
+    public String getName() {
         return name;
     }
 
     /**
      * @param name the name to set
      */
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 

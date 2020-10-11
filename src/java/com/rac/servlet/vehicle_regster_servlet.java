@@ -5,13 +5,8 @@
  */
 package com.rac.servlet;
 
-import com.rac.daoimpl.CustomerDaoImpl;
-import com.rac.model.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author personal
  */
-@WebServlet(name = "customer_register_servlet", urlPatterns = {"/customer_register_servlet"})
-public class customer_register_servlet extends HttpServlet {
+@WebServlet(name = "vehicle_regster_servlet", urlPatterns = {"/vehicle_regster_servlet"})
+public class vehicle_regster_servlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,37 +31,19 @@ public class customer_register_servlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            response.setContentType("text/html;charset=UTF-8");
-            PrintWriter out = response.getWriter();
-            
-            String Name = "";
-            String Address = "";
-            String Email = "";
-            String Phone = "";
-            String Detail = "";
-            
-            Name = request.getParameter("txt_name");
-            Address = request.getParameter("txt_address");
-            Email = request.getParameter("txt_email");
-            Phone = request.getParameter("txt_phone");
-            Detail = request.getParameter("txt_detail");
-            
-            Customer Customer = new Customer();
-            Customer.setAddress(Address);
-            Customer.setContactNo(Phone);
-            Customer.setEmail(Email);
-            Customer.setEtails(Detail);
-            Customer.setName(Name);
-            
-            boolean status = new CustomerDaoImpl().AddCustomer(Customer);
-            if(status){
-                response.sendRedirect("home.jsp"); 
-            }            
-        } catch (SQLException ex) {
-            Logger.getLogger(customer_register_servlet.class.getName()).log(Level.SEVERE, null, ex);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet vehicle_regster_servlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet vehicle_regster_servlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
