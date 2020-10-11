@@ -28,7 +28,7 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/js/mdb.min.js"></script>
     </head>
     <body>
-        <%@include file="navigationBar.jsp" %>
+        <%@include file="menu_header.jsp" %>
         <form action="addClient" method="POST">
             <div style="position: absolute; left: 35%; top: 12%; width: 30%; height: 80%">
             </div>
