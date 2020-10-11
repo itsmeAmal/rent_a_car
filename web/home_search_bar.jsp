@@ -20,8 +20,7 @@
         <div style="position: absolute; top: 10%; width: 100%; height: 30%;">
             <form class="example" action="#" style="margin:auto; max-width:300px">
                 <div><input class="w3-input w3-border" name="first" type="text"></div>
-                <div><input type="submit" class="button button2" value="SEARCH">
-                </div>
+                <div><input type="submit" class="button button2" value="SEARCH"></div>
             </form> 
         </div>
     </body>
