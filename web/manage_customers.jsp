@@ -73,62 +73,27 @@
         </style>
     </head>
     <body>
-        <div style="position: absolute; left: 5%; top: 10%; width: 40%; height: 100%;">
-            <form action="customer_register_servlet" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
-                <h2 class="w3-center">Create Profile</h2>
-
-                <div class="w3-row w3-section" style="position: relative; left: 10%; width: 80%">
-                    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
-                    <div class="w3-rest">
-                        <input class="w3-input w3-border" name="txt_name" type="text" placeholder="Full Name">
-                    </div>
-                </div>
-
-                <div class="w3-row w3-section" style="position: relative; left: 10%; width: 80%">
-                    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
-                    <div class="w3-rest">
-                        <input class="w3-input w3-border" name="txt_address" type="text" placeholder="Address">
-                    </div>
-                </div>
-
-                <div class="w3-row w3-section" style="position: relative; left: 10%; width: 80%">
-                    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-envelope-o"></i></div>
-                    <div class="w3-rest">
-                        <input class="w3-input w3-border" name="txt_email" type="text" placeholder="Email">
-                    </div>
-                </div>
-                <div class="w3-row w3-section" style="position: relative; left: 10%; width: 80%">
-                    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-phone"></i></div>
-                    <div class="w3-rest">
-                        <input class="w3-input w3-border" name="txt_phone" type="text" placeholder="Phone">
-                    </div>
-                </div>
-                <div class="w3-row w3-section" style="position: relative; left: 10%; width: 80%">
-                    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
-                    <div class="w3-rest">
-                        <input class="w3-input w3-border" name="txt_detail" type="text" placeholder="Message">
-                    </div>
-                </div>
-                <button class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding" style="position: relative; left: 10%; width: 80%">Send</button>
-            </form>
-        </div>
-        <div class="container" style="position: absolute; left: 50%; top: 10%; width: 45%; height: 100%">
-            <h2>Contextual Classes</h2>
-            <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success, .info, .warning, and .danger.</p>
+         <%@include file="navigationBar.jsp" %>
+        <div class="container" style="position: absolute; left: 15%; top: 20%; width: 70%; height: 100%">
+            <h2>Manage Customers</h2>
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
+                        <th>Name</th>
                         <th>Email</th>
-                        <th>Update as Inactive</th>
-                        <th>Delete</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Detail</th>
+                        <th>Update As</th>
+                        <th>Delete</th>     
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Default</td>
                         <td>Defaultson</td>
+                        <td>def@somemail.com</td>
+                        <td>def@somemail.com</td>
                         <td>def@somemail.com</td>
                         <td><button class="btn info">Info</button></td>
                         <td><button class="btn danger">Danger</button>

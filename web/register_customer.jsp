@@ -74,7 +74,7 @@
     </head>
     <body>
         <%@include file="menu_header.jsp" %>
-        <div style="position: absolute; left: 5%; top: 10%; width: 40%; height: 100%;">
+        <div style="position: absolute; left: 30%; top: 10%; width: 40%; height: 100%;">
             <form action="customer_register_servlet" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
                 <h2 class="w3-center">Create Profile</h2>
 

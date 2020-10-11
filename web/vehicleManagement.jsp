@@ -45,7 +45,7 @@
                         <th>Model Name</th>
                         <th>Vehicle Availability</th>
                         <th>Category Id</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
