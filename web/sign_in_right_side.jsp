@@ -68,7 +68,7 @@
     </head>
     <body>
         <div style="position: absolute; left: 2%; top: 10%; width: 25%">
-            <form action="/action_page.php" method="post">
+            <form action="static_admin_login" method="post">
                 <div class="imgcontainer">
                     <img src="slider-images/avatar.png" alt="Avatar" class="avatar">
                 </div>
@@ -77,7 +77,7 @@
                     <input type="text" placeholder="Enter Username" name="uname" required style=" position: relative; width: 25%;">
                     <br>
                     <label for="psw"><b>Password</b></label><br>
-                    <input type="password" placeholder="Enter Password" name="psw" required style=" position: relative; width: 25%;">
+                    <input type="password" placeholder="Enter Password" name="pw" required style=" position: relative; width: 25%;">
                     <br>
                     <button type="submit" style=" position: relative; width: 25%;">Login</button> <br>
                     <label>

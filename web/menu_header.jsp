@@ -41,5 +41,17 @@
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
         </div>
+        <div style="position: absolute; left: 85%; top: 15px">
+            <%
+                HttpSession ses = request.getSession();
+                String uname = (String) ses.getAttribute("uname");
+            %>
+            Hi, <%=(uname == null ? "User" : uname)%>
+            <%
+            %>
+        </div>
+        <div style="position: absolute; left: 80%; top: 0px; color: #ffff00; font-size: 15">
+            <img src="images/logged-user.png"/>
+        </div>
     </body>
 </html>

@@ -72,14 +72,12 @@
 
                 <ul class="navbar-nav nav-flex-icons" style="position: absolute; left: 80%; top: 58%; width: 300px; height: 60px;">
                     <li class="nav-item">
-
-                    <li><a href="#" style="color: #ffffff"><span class="glyphicon glyphicon-log-in"></span><b>Hi, User</b> </a></li>
-
+                    <li><a href="#" style="color: #ffffff"><span class="glyphicon glyphicon-log-in"></span><b>Hi, Admin</b> </a></li>
                     </li>
                 </ul>
                 <ul class="navbar-nav nav-flex-icons" style="position: absolute; left: 90%; top: 58%; width: 300px; height: 60px;">
                     <li class="nav-item">
-                    <li><a href="login.jsp" style="color: #ffffff"><span class="glyphicon glyphicon-log-in"></span><b>Log out</b> </a></li>
+                        <!--<li><a href="login.jsp" style="color: #ffffff"><span class="glyphicon glyphicon-log-in"></span><b>Log out</b> </a></li>-->
                     </li>
                 </ul>
             </div>

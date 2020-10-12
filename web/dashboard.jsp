@@ -86,7 +86,6 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/js/mdb.min.js"></script>
-
     </head>
     <body> 
         <div style="position: fixed; left: 0px; top: 0px; width: 100%; height: 100px; z-index:999">
@@ -96,7 +95,6 @@
         <!--9 big white box-->
         <div style="position: fixed; left: 0%; top: 6%; width: 100%; height: 100%; z-index:-1">
         </div>
-
         <%            
 //            HttpSession sesUser = request.getSession();
 //            User user1 = (User) sesUser.getAttribute("loggedUser");
@@ -108,8 +106,6 @@
 
         <div style="position: absolute; left: 40%; top: 15%; width: 20%; height: 15px"></div>
         <%@include file="barChart.jsp" %>
-
         <%@include file="analiticalTiles_menu.jsp" %>
-
     </body>
 </html>

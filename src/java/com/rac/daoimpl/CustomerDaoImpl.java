@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class CustomerDaoImpl implements CustomerDao {
 
     private String SelectQuery = "select customer_id, customer_name, customer_email, customer_contact_no, "
-            + " customer_address, customer_status, customer_detail customer";
+            + " customer_address, customer_status, customer_detail from customers";
 
     @Override
     public boolean AddCustomer(Customer Customer) throws SQLException {
@@ -73,7 +73,7 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public ResultSet GetCustomerByMoreAttributes(ArrayList<String[]> AttributeValueList, String Operator) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new commonDaoImpl().getResultByAttributesWithJoinOperator(SelectQuery, AttributeValueList, Operator);
     }
 
     @Override
