@@ -1,10 +1,4 @@
-<%-- 
-    Document   : loginHistory_menu
-    Created on : May 18, 2020, 2:17:12 PM
-    Author     : Amal
---%>
 
-<%@page import="com.cms.controller.loginDetailController"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -43,7 +37,7 @@
     <body>
         <div class="card p-3 mb-3" style="position: fixed; left: 15px; top: 17%; width: 17%; height: 79%; z-index:-1" >
             <%
-                ResultSet logHistRset = loginDetailController.getAllLoginDetails();
+//                ResultSet logHistRset = loginDetailController.getAllLoginDetails();
             %>
             <div style="position: absolute; left: 5%; top: 5%; width: 70%; height: 5%">
                 <h4 style="color: #000000"><b>Login History</b></h4>
@@ -53,15 +47,14 @@
                     <table class="table table-bordered table-striped mb-0">
                         <tbody>
                             <%
-                                while (logHistRset.next()) {
+//                                while (logHistRset.next()) {
                             %>
                             <tr>
-                                <!--<td><%=logHistRset.getString("login_detail_detail")%></td>-->
-                                <td><i class="fas fa-edit mr-2 grey-text" aria-hidden="true"></i><%=logHistRset.getString("login_detail_detail")%></td>
+                                <td></td>
+                                <td><i class="fas fa-edit mr-2 grey-text" aria-hidden="true"></i></td>
                             </tr>
-                            <%
-                                }
-                            %>
+                            <%//                                }
+                                %>
                         </tbody>
                     </table>
                 </div>

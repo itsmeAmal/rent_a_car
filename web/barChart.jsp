@@ -1,4 +1,4 @@
-<%@page import="com.cms.controller.commonController"%>
+<%@page import="com.rac.controller.commonController"%>
 <%@page import="java.math.BigDecimal"%>
 <!DOCTYPE HTML>
 <html>
@@ -16,19 +16,19 @@
             BigDecimal octValue = BigDecimal.ZERO;
             BigDecimal novValue = BigDecimal.ZERO;
             BigDecimal decValue = BigDecimal.ZERO;
-
-            janValue = commonController.getMonthlyChequeDepositValue(1);
-            febValue = commonController.getMonthlyChequeDepositValue(2);
-            marValue = commonController.getMonthlyChequeDepositValue(3);
-            aprValue = commonController.getMonthlyChequeDepositValue(4);
-            mayValue = commonController.getMonthlyChequeDepositValue(5);
-            junValue = commonController.getMonthlyChequeDepositValue(6);
-            julValue = commonController.getMonthlyChequeDepositValue(7);
-            augValue = commonController.getMonthlyChequeDepositValue(8);
-            sepValue = commonController.getMonthlyChequeDepositValue(9);
-            octValue = commonController.getMonthlyChequeDepositValue(10);
-            novValue = commonController.getMonthlyChequeDepositValue(11);
-            decValue = commonController.getMonthlyChequeDepositValue(12);
+//
+//            janValue = commonController.getMonthlyChequeDepositValue(1);
+//            febValue = commonController.getMonthlyChequeDepositValue(2);
+//            marValue = commonController.getMonthlyChequeDepositValue(3);
+//            aprValue = commonController.getMonthlyChequeDepositValue(4);
+//            mayValue = commonController.getMonthlyChequeDepositValue(5);
+//            junValue = commonController.getMonthlyChequeDepositValue(6);
+//            julValue = commonController.getMonthlyChequeDepositValue(7);
+//            augValue = commonController.getMonthlyChequeDepositValue(8);
+//            sepValue = commonController.getMonthlyChequeDepositValue(9);
+//            octValue = commonController.getMonthlyChequeDepositValue(10);
+//            novValue = commonController.getMonthlyChequeDepositValue(11);
+//            decValue = commonController.getMonthlyChequeDepositValue(12);
         %>
         <script>
             window.onload = function () {

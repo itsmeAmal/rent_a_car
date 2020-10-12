@@ -1,10 +1,5 @@
- <%-- 
-    Document   : activeUsers_menu
-    Created on : May 16, 2020, 6:31:12 PM
-    Author     : Amal
---%>
 
-<%@page import="com.cms.controller.userController"%>
+<%--<%@page import="com.cms.controller.userController"%>--%>
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -42,8 +37,8 @@
     </head>
     <body>
         <%
-            ResultSet rset4 = userController.getAllUsers();
-            int i = 0;
+//            ResultSet rset4 = userController.getAllUsers();
+//            int i = 0;
         %>
         <div style="position: absolute; left: 20%; top: 30%; width: 30%; height: 5%">
             <h4 style="color: #000000"><b>Billing History</b></h4>
@@ -60,7 +55,7 @@
                     </thead>
                     <tbody>
                         <%
-                            while (rset4.next()) {
+//                            while (rset4.next()) {
                         %>
                         <tr>
                             <th scope="row"></th>
@@ -69,7 +64,7 @@
 
                         </tr>
                         <%
-                            }
+//                            }
                         %>
                     </tbody>
                 </table>

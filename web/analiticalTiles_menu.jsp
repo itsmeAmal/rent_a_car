@@ -1,11 +1,4 @@
-<%-- 
-    Document   : analiticalTiles_menu
-    Created on : May 16, 2020, 6:17:48 PM
-    Author     : Amal
---%>
 
-<%@page import="com.cms.controller.chequeDetailController"%>
-<%@page import="com.cms.controller.commonController"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
