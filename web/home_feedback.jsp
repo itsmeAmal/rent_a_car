@@ -8,12 +8,11 @@
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 <!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
-     
     </head>
     <body style="background-color: #ccccff">
         <!-- Container (Contact Section) -->
         <div id="contact" class="container-fluid bg-grey" style="position: absolute; top: 90%; width: 100%; height: 30%; left: 0px;">
-            <h2 class="text-center">CONTACT</h2>
+            <h2 class="text-center">FEEDBACK & CONTACT</h2>
             <div class="row">
                 <div class="col-sm-5">
                     <p>Contact us and we'll get back to you within 24 hours.</p>

@@ -34,26 +34,28 @@
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="userManagement.jsp">Enable New Device        |  </a>
+                        <a class="nav-link" href="customerManagement.jsp">Customer  |  </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="clientManagement.jsp">   Device Stat.         |</a>
+                        <a class="nav-link" href="employeeManagament.jsp">Employee  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="addIssueCheque.jsp">   Mobile App         |</a>
+                        <a class="nav-link" href="driverManagament.jsp">Driver  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="addUser.jsp">   Add New User   </a>
-                    </li>
-                    <!--                    <li class="nav-item">
-                                            <a class="nav-link" href="addClient.jsp">Add Clients</a>
-                                        </li>-->
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="addIssueCheque.jsp">Manage Cheques</a>
+                        <a class="nav-link" href="feedbackManagement.jsp">Feedback  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="addClient.jsp">Add Clients</a>
+                        <a class="nav-link" href="vehicleManagement.jsp">Vehicle  |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bookingManagement.jsp">Booking  |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="paymentManagement.jsp">Payment  |</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logManagement.jsp">Log  |</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav nav-flex-icons">

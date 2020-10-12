@@ -9,8 +9,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
     </head>
     <body>
-        <div class="container" style="position: absolute; left: 70%; top: 5%; width: 25%;">
-            <h2>Available Top Vehicles</h2>
+        <div class="container" style="position: absolute; left: 28%; top: 5%; width: 70%;">
+            <h2>Available Vehicles</h2>
             <div class="list-group">
                 <a href="#" class="list-group-item active">
                     <h4 class="list-group-item-heading">Toyota Premio G Grade</h4>
