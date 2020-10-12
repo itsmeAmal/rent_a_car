@@ -1,4 +1,6 @@
 
+<%@page import="com.rac.controller.commonConstants"%>
+<%@page import="com.rac.daoimpl.CustomerDaoImpl"%>
 <%--<%@page import="com.cms.controller.userController"%>--%>
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -41,30 +43,34 @@
 //            int i = 0;
         %>
         <div style="position: absolute; left: 20%; top: 30%; width: 30%; height: 5%">
-            <h4 style="color: #000000"><b>Billing History</b></h4>
+            <h4 style="color: #000000"><b>Active Customer Accounts</b></h4>
         </div>
         <div style="position: absolute; left: 20%; top: 35%; width: 37%; height: 10%">
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <%
+                ResultSet rset = 
+                        new CustomerDaoImpl().GetCustomerByOneAttribute("customer_status", commonConstants.Sql.EQUAL, "1");
+                 int i = 0;
+                %>
                 <table class="table table-bordered table-striped mb-0">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col"><i class="fas fa-image mr-2 grey-text" aria-hidden="true"></i>Date</th>
-                            <th scope="col"><i class="fas fa-book mr-2 grey-text" aria-hidden="true"></i>Bill No</th>
+                            <th scope="col"><i class="fas fa-image mr-2 grey-text" aria-hidden="true"></i>Cust. Name</th>
+                            <th scope="col"><i class="fas fa-book mr-2 grey-text" aria-hidden="true"></i>Email</th>
                         </tr>
                     </thead>
                     <tbody>
                         <%
-//                            while (rset4.next()) {
+                            while (rset.next()) {
                         %>
                         <tr>
-                            <th scope="row"></th>
-                            <td>2020/10/20</td>
-                            <td>1002001</td>
-
+                            <th scope="row"><%=++i%></th>
+                            <td><%=rset.getString("customer_name")%></td>
+                            <td><%=rset.getString("customer_email")%></td>
                         </tr>
                         <%
-//                            }
+                            }
                         %>
                     </tbody>
                 </table>
