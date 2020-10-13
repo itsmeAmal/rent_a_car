@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class VehicleDaoImpl implements VehicleDao {
 
     private String SelectQuery = "select vehicle_id, vehicle_reg_no, "
-            + "vehicle_model_name, vehicle_availability, vehicle_category_id from vehicle";
+            + "vehicle_model_name, vehicle_availability, vehicle_category_id from vehicles";
 
     @Override
     public boolean AddVehicle(Vehicle Vehicle) throws SQLException {

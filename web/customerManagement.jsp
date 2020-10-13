@@ -1,3 +1,5 @@
+<%@page import="com.rac.daoimpl.CustomerDaoImpl"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -33,54 +35,61 @@
 
         <div class="container" style="position: absolute; left: 12%; top: 18%; width: 76%; height: 100%; z-index:-1">
             <h4>Manage Customers</h4>
+            <%
+                ResultSet rset = new CustomerDaoImpl().GetAllCustomers();
+            %>
             <table class="table">
                 <thead>
                     <tr style="background-color: #000000; color: white">
                         <th>Customer Name</th>
                         <th>Email</th>
                         <th>Contact Number</th>
-                         <th>Address</th>
+                        <th>Address</th>
                         <th>Status</th>
-                        <th>Etails</th>
-                        
+                        <th>Action</th>
+
                     </tr>
                 </thead>
                 <tbody>
+                    <%
+                        while (rset.next()) {
+                    %>
                     <tr class="info table-bordered" style="background-color: white">
-                <form action="updateUserAsActiveOrInactive" method="post">
-                    <td>
-                        <input type="hidden" value="" name="hiddenUserId">
-                        <input type="hidden" value=" name="hiddenUserStatus">
-                    </td>
-                    <td>
-                    <td></td>
-                    <td style="width: 170px;">
-                        <div class="form-group" >
-                            <div class="dropdown">
-                                <div id="user_type">
-                                    <select class="form-control" name="user_type">
-                                        <option>--</option>
-                                        <option value="">Admin</option>
-                                        <option value="">Manager</option>
-                                        <option value="">User</option>
-                                        <option value="">Guest Account</option>
-                                    </select>
-                                </div>
+                        <td><%= rset.getString("customer_name")%>
+                        </td>
+                        <td><%= rset.getString("customer_email")%></td>
+                        <td><%= rset.getString("customer_contact_no")%></td>
+                        <td style="width: 170px;"><%= rset.getString("customer_address")%></td>
+                        <td>
+                            <div>
+                                <%
+                                    if (rset.getString("customer_status").equalsIgnoreCase("1")) {
+                                %>
+                                <form action="updateUserAsActive">
+                                    <input type="submit"  style="width: 150px" value="Deactivate User" name="btn_inactive_user" class="form-control btn-danger m-0 px-3">
+                                    <input type="hidden" name="hid_cust_id" value="<%= rset.getString("customer_id")%>">
+                                </form>
+                                <%
+                                } else {
+                                %>
+                                <form action="updateUserAsInactive">
+                                    <input type="submit"  style="width: 150px" value="Activate User" name="btn_active_user" class="form-control  btn-default m-0 px-3">
+                                    <input type="hidden" name="hid_cust_id" value="<%= rset.getString("customer_id")%>">
+                                </form>
+                                <%
+                                    }
+                                %>
                             </div>
-                        </div>
-                    </td>
-                    <td><div>
-                            <input type="submit"  style="width: 150px" value="Deactivate User" name="btn_inactive_user" class="form-control btn-danger m-0 px-3">
-
-                            <input type="submit"  style="width: 150px" value="Activate User" name="btn_active_user" class="form-control  btn-default m-0 px-3">
-
-                        </div></td>
-                    <td>   
-                        <input type="submit" value="Update" name="btn_update_user" class="form-control  btn-warning m-0 px-3">
-                    </td>
-                </form>
-                </tr>
-
+                        </td>
+                        <td>   
+                            <form action="delete_customer">
+                                <input type="submit" value="Delete" name="btn_delete_customer" class="form-control  btn-warning m-0 px-3">
+                                <input type="hidden" name="hid_cust_id" value="<%= rset.getString("customer_id")%>">
+                            </form>         
+                        </td>
+                    </tr>
+                    <%                    }
+                    %>
                 </tbody>
             </table>
         </div>

@@ -60,7 +60,7 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public boolean DeleteCustomer(int Customerid) throws SQLException {
         Connection con = DatabaseConnection.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("delete from customer where customer_id=?");
+        PreparedStatement ps = con.prepareStatement("delete from customers where customer_id=?");
         ps.setInt(1, Customerid);
         ps.executeUpdate();
         return true;
@@ -79,7 +79,24 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public ResultSet GetAllCustomers() throws SQLException {
         return new commonDaoImpl().getAllRecords(SelectQuery);
+    }
 
+    public boolean UpdateAsInactive(int Id) throws SQLException {
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("update customers set customer_status=0 where customer_id=?");
+        ps.setInt(1, Id);
+        ps.executeUpdate();
+        ps.close();
+        return true;
+    }
+
+    public boolean UpdateAsActive(int Id) throws SQLException {
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("update customers set customer_status=1 where customer_id=?");
+        ps.setInt(1, Id);
+        ps.executeUpdate();
+        ps.close();
+        return true;
     }
 
 }
