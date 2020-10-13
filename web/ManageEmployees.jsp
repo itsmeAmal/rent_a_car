@@ -23,14 +23,104 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/js/mdb.min.js"></script>
+
+        <style>
+            body {font-family: Arial, Helvetica, sans-serif;}
+            form {border: 3px solid #f1f1f1;}
+
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+            }
+
+            button:hover {
+                opacity: 0.8;
+            }
+
+            .cancelbtn {
+                width: auto;
+                padding: 10px 18px;
+                background-color: #f44336;
+            }
+
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+
+            img.avatar {
+                width: 100px;
+                border-radius: 50%;
+            }
+
+            .container {
+                padding: 16px;
+            }
+
+            span.psw {
+                float: right;
+                padding-top: 16px;
+            }
+
+            /* Change styles for span and cancel button on extra small screens */
+            @media screen and (max-width: 300px) {
+                span.psw {
+                    display: block;
+                    float: none;
+                }
+                .cancelbtn {
+                    width: 100%;
+                }
+            }
+        </style>
     </head>
     <body>
         <div style="z-index:20">
             <%@include file="navigationBar.jsp" %>
         </div>
-        <div style="position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index:-1">
-            <!--<img src="images/background-blur-clean-clear-531880.jpg">-->
+
+        <div style="position: absolute; left: 2%; top: 20%; width: 25%">
+            <form action="save_employee" method="post">
+                <div class="container">
+
+                    <input type="text" placeholder="Enter Name" name="employee_name" required style=" position: relative; top: 10%; width: 98%;">
+                    <br>
+
+                    <input type="text" placeholder="Enter NIC" name="employee_nic" required style=" position: relative; top: 10%; width: 98%;">
+                    <br>
+                    
+                    <input type="text" placeholder="Enter Address" name="employee_address" required style=" position: relative; top: 10%; width: 98%;">
+                    <br>
+                    
+                    <input type="text" placeholder="Enter Contact" name="employee_contact" required style=" position: relative; top: 10%; width: 98%;">
+                    <br>
+                    
+                    <input type="text" placeholder="Enter Email" name="employee_email" required style=" position: relative; top: 10%; width: 98%;">
+                    <br>
+
+                    <button type="submit" style=" position: relative; width: 98%;">Save</button> 
+                    <br>
+
+                </div>
+                <div class="container" style=" position: relative; width: 100%; background-color:#f1f1f1">
+                </div>
+            </form>
         </div>
+  
         <div style="position: absolute; left: 10%; top: 15%; width: 80%; height: 80%; background-color: white; z-index:-1; border-radius: 20px">
         </div>
         <div class="container" style="position: absolute; left: 30%; top: 18%; width: 68%; height: 100%; z-index:-1">
