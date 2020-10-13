@@ -37,7 +37,7 @@
                         <a class="nav-link" href="customerManagement.jsp">Customer  |  </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="employeeManagament.jsp">Employee  |</a>
+                        <a class="nav-link" href="ManageEmployees.jsp">Employee  |</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="driverManagament.jsp">Driver  |</a>

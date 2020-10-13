@@ -14,30 +14,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- *
- * @author personal
- */
 public class EmployeeDaoImpl implements EmployeeDao {
 
     private String SelectQuery = "select employee_id, employee_name, employee_nic, employee_category_id, "
-            + "employee_address, employee_contact, employee_email, employee_remark, employee_status from employee";
+            + "employee_address, employee_contact, employee_email, employee_remark, employee_status from employees";
 
     @Override
     public boolean AddEmployee(Employee Employee) throws SQLException {
         Connection con = DatabaseConnection.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("insert into employee (employee_id, employee_name, "
-                + "employee_nic, employee_category_id, employee_address, employee_contact, "
-                + "employee_email, employee_remark, employee_status) values (?,?,?,?,?,?,?,?,?)");
-        ps.setInt(1, Employee.getId());
-        ps.setString(2, Employee.getName());
-        ps.setString(3, Employee.getNic());
-        ps.setInt(4, Employee.getCategoryId());
-        ps.setString(5, Employee.getAddress());
-        ps.setString(6, Employee.getContactNo());
-        ps.setString(7, Employee.getEmail());
-        ps.setString(8, Employee.getRemark());
-        ps.setInt(9, 1);
+        PreparedStatement ps = con.prepareStatement("insert into employees (employee_name, "
+                + "employee_nic, employee_address, employee_contact, "
+                + "employee_email, employee_remark) values (?,?,?,?,?,?)");
+        ps.setString(1, Employee.getName());
+        ps.setString(2, Employee.getNic());
+        ps.setString(3, Employee.getAddress());
+        ps.setString(4, Employee.getContactNo());
+        ps.setString(5, Employee.getEmail());
+        ps.setString(6, Employee.getRemark());
         ps.executeUpdate();
         return true;
     }
@@ -64,7 +57,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public boolean DeleteEmployee(int EmployeeId) throws SQLException {
         Connection con = DatabaseConnection.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("delete from employee where employee_id =?");
+        PreparedStatement ps = con.prepareStatement("delete from employees where employee_id =?");
         ps.setInt(1, EmployeeId);
         ps.executeUpdate();
         return true;
@@ -85,4 +78,21 @@ public class EmployeeDaoImpl implements EmployeeDao {
         return new commonDaoImpl().getAllRecords(SelectQuery);
     }
 
+    public boolean UpdateEmployeeAsActive(int Id) throws SQLException {
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("update employees set employee_status=1 where employee_id=?");
+        ps.setInt(1, Id);
+        ps.executeUpdate();
+        ps.close();
+        return true;
+    }
+    
+    public boolean UpdateEmployeeAsInactive(int Id) throws SQLException {
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("update employees set employee_status=0 where employee_id=?");
+        ps.setInt(1, Id);
+        ps.executeUpdate();
+        ps.close();
+        return true;
+    }
 }
