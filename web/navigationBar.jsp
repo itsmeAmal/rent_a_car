@@ -34,28 +34,28 @@
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="customerManagement.jsp">Customer  |  </a>
+                        <a class="nav-link" href="customerManagement.jsp">Customers  |  </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ManageEmployees.jsp">Employee  |</a>
+                        <a class="nav-link" href="ManageEmployees.jsp">Employees  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="driverManagament.jsp">Driver  |</a>
+                        <a class="nav-link" href="ManageDrivers.jsp">Drivers  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="feedbackManagement.jsp">Feedback  |</a>
+                        <a class="nav-link" href="feedbackManagement.jsp">Feedbacks  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="vehicleManagement.jsp">Vehicle  |</a>
+                        <a class="nav-link" href="vehicleManagement.jsp">Vehicles  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="bookingManagement.jsp">Booking  |</a>
+                        <a class="nav-link" href="bookingManagement.jsp">Bookings  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="paymentManagement.jsp">Payment  |</a>
+                        <a class="nav-link" href="paymentManagement.jsp">Payments  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="logManagement.jsp">Log  |</a>
+                        <a class="nav-link" href="logManagement.jsp">Logs  |</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav nav-flex-icons">

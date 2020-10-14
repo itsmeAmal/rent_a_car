@@ -17,25 +17,31 @@ import java.sql.SQLException;
  *
  * @author personal
  */
-public class DriverDaoImpl implements DriverDao{
+public class DriverDaoImpl implements DriverDao {
 
     private String SelectQuery = "select driver_id, driver_name, driver_reg_date, driver_email, "
             + " driver_address, driver_contact, driver_remark from drivers";
-    
+
+    /**
+     * driver_id, driver_name, driver_reg_date, driver_email, driver_address,
+     * driver_contact, driver_remark
+     *
+     * @param Driver
+     * @return 
+     * @throws java.sql.SQLException
+     */
     @Override
     public boolean addDriver(Driver Driver) throws SQLException {
         Connection con = DatabaseConnection.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("insert into drivers(driver_id, "
-                + " driver_name, driver_email, driver_address, "
-                + " driver_contact, driver_remark) values (?,?,?,?,?,?)");
-        ps.setInt(1, Driver.getId()); 
-        ps.setString(2, Driver.getName());
-        ps.setString(3, Driver.getEmail()); 
-        ps.setString(4, Driver.getAddress());  
-        ps.setString(5, Driver.getContact()); 
-        ps.setString(6, Driver.getDetail()); 
+        PreparedStatement ps = con.prepareStatement("insert into drivers(driver_name, driver_email, driver_address, "
+                + " driver_contact, driver_remark) values (?,?,?,?,?)");
+        ps.setString(1, Driver.getName());
+        ps.setString(2, Driver.getEmail());
+        ps.setString(3, Driver.getAddress());
+        ps.setString(4, Driver.getContact());
+        ps.setString(5, Driver.getDetail());
         ps.executeUpdate();
-        ps.close(); 
+        ps.close();
         return true;
     }
 
@@ -48,7 +54,7 @@ public class DriverDaoImpl implements DriverDao{
     public boolean deleteDriver(int DriverId) throws SQLException {
         Connection con = DatabaseConnection.getDatabaseConnection();
         PreparedStatement ps = con.prepareStatement("delete from drivers where driver_id=?");
-        ps.setInt(1, DriverId); 
+        ps.setInt(1, DriverId);
         ps.executeUpdate();
         ps.close();
         return true;
@@ -62,5 +68,23 @@ public class DriverDaoImpl implements DriverDao{
     @Override
     public ResultSet getDriverByOneAttribute(String Attribute, String Condition, String Value) throws SQLException {
         return new commonDaoImpl().getResultByAttribute(SelectQuery, Attribute, Condition, Value);
+    }
+
+    public boolean UpdateDriverAsActive(int Id) throws SQLException {
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("update drivers set driver_remark=1 where driver_id=?");
+        ps.setInt(1, Id);
+        ps.executeUpdate();
+        ps.close();
+        return true;
+    }
+
+    public boolean UpdateDriverAsInactive(int Id) throws SQLException {
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("update drivers set driver_remark=0 where driver_id=?");
+        ps.setInt(1, Id);
+        ps.executeUpdate();
+        ps.close();
+        return true;
     }
 }
