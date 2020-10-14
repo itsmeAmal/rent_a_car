@@ -1,4 +1,3 @@
-
 package com.rac.daoimpl;
 
 import com.rac.dao.loginDetailDao;
@@ -41,6 +40,23 @@ public class loginDetailDaoImpl implements loginDetailDao {
         PreparedStatement ps = con.prepareStatement("delete from login_detail where login_detail_id=?");
         ps.setInt(1, loginDetailId);
         ps.executeUpdate();
+        return true;
+    }
+
+    public boolean UpdateLogRecordAsIdentified(int Id) throws SQLException {
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("update login_detail set login_detail_status=0 where login_detail_id=?");
+        ps.setInt(1, Id);
+        ps.executeUpdate();
+        ps.close();
+        return true;
+    }
+    public boolean UpdateLogRecordAsUnidentified(int Id) throws SQLException {
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("update login_detail set login_detail_status=1 where login_detail_id=?");
+        ps.setInt(1, Id);
+        ps.executeUpdate();
+        ps.close();
         return true;
     }
 

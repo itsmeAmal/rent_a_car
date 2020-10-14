@@ -55,7 +55,7 @@
                         <a class="nav-link" href="ManagePayments.jsp">Payments  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="logManagement.jsp">Logs  |</a>
+                        <a class="nav-link" href="ManageLoginRecords.jsp">Logs  |</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav nav-flex-icons">
