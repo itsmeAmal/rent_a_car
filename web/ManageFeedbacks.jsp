@@ -1,3 +1,4 @@
+<%@page import="com.rac.daoimpl.FeedbackDaoImpl"%>
 <%@page import="com.rac.daoimpl.DriverDaoImpl"%>
 <%@page import="com.rac.daoimpl.CustomerDaoImpl"%>
 <%@page import="java.sql.ResultSet"%>
@@ -88,51 +89,23 @@
             }
         </style>
     </head>
-    <body>
+    <body> 
         <div style="z-index:20">
             <%@include file="navigationBar.jsp" %>
         </div>
-
-        <div style="position: absolute; left: 2%; top: 20%; width: 25%">
-            <form action="save_driver" method="post">
-                <div class="container">
-
-                    <input type="text" placeholder="Enter Name" name="driver_name" required style=" position: relative; top: 10%; width: 98%;">
-                    <br>
-
-                    <input type="text" placeholder="Enter Address" name="driver_address" required style=" position: relative; top: 10%; width: 98%;">
-                    <br>
-
-                    <input type="text" placeholder="Enter Contact" name="driver_contact" required style=" position: relative; top: 10%; width: 98%;">
-                    <br>
-
-                    <input type="text" placeholder="Enter Email" name="driver_email" required style=" position: relative; top: 10%; width: 98%;">
-                    <br>
-
-                    <button type="submit" style=" position: relative; width: 98%;">Save</button> 
-                    <br>
-
-                </div>
-                <div class="container" style=" position: relative; width: 100%; background-color:#f1f1f1">
-                </div>
-            </form>
-        </div>
-
         <div style="position: absolute; left: 10%; top: 15%; width: 80%; height: 80%; background-color: white; z-index:-1; border-radius: 20px">
         </div>
-        <div class="container" style="position: absolute; left: 30%; top: 18%; width: 68%; height: 100%; z-index:-1">
-            <h4>Manage Drivers</h4>
+        <div class="container" style="position: absolute; left: 10%; top: 18%; width: 88%; height: 100%; z-index:-1">
+            <h4>Manage Feedbacks</h4>
             <%
-                ResultSet rset = new DriverDaoImpl().getAllDrivers();
+                ResultSet rset = new FeedbackDaoImpl().getAllFeedbacks();
             %>
             <table class="table">
                 <thead>
                     <tr style="background-color: #000000; color: white">
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Contact Number</th>
-                        <th>Address</th>
-                        <th>Reg. Date</th>
+                        <th>Comment</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -142,27 +115,25 @@
                         while (rset.next()) {
                     %>
                     <tr class="info table-bordered" style="background-color: white">
-                        <td><%= rset.getString("driver_name")%></td>
-                        <td><%= rset.getString("driver_email")%></td>
-                        <td><%= rset.getString("driver_contact")%></td>
-                        <td style="width: 170px;"><%= rset.getString("driver_address")%></td>
-                        <td><%= rset.getString("driver_reg_date")%></td>
+                        <td><%= rset.getString("feedback_name")%></td>
+                        <td><%= rset.getString("feedback_email")%></td>
+                        <td style="width: 170px;"><%= rset.getString("feedback_comment")%></td>
                         <td>
                             <div>
                                 <%
-                                if (rset.getString("driver_remark").equalsIgnoreCase(Integer.toString(1))) {
+                                    if (rset.getString("feedback_status").equalsIgnoreCase(Integer.toString(1))) {
                                 %>
-                                <form action="updateDriverAsInactive">
-                                    <input type="submit"  style="width: 150px" value="Deactivate" name="btn_activate" class="form-control btn-danger m-0 px-3">
-                                    <input type="hidden" name="hid_id" value="<%= rset.getString("driver_id")%>">
+                                <form action="updateFeedbackAsInvalid">
+                                    <input type="submit"  style="width: 150px" value="Invalid" name="btn_activate" class="form-control btn-danger m-0 px-3">
+                                    <input type="hidden" name="hid_id" value="<%= rset.getString("feedback_id")%>">
                                 </form>
                                 <%
                                 } else {
                                 %>
                                 <!--<form action="updateDriverAsActive">-->
-                                <form action="updateDriverAsActive">
-                                    <input type="submit"  style="width: 150px" value="Activate" name="btn_deactivate" class="form-control  btn-default m-0 px-3">
-                                    <input type="hidden" name="hid_id" value="<%= rset.getString("driver_id")%>">
+                                <form action="updateFeedbackAsValid">
+                                    <input type="submit"  style="width: 150px" value="Valid" name="btn_deactivate" class="form-control  btn-default m-0 px-3">
+                                    <input type="hidden" name="hid_id" value="<%= rset.getString("feedback_id")%>">
                                 </form>
                                 <%
                                     }
@@ -170,9 +141,9 @@
                             </div>
                         </td>
                         <td>   
-                            <form action="delete_driver">
-                                <input type="submit" value="Delete" name="hid_id" class="form-control  btn-warning m-0 px-3">
-                                <input type="hidden" name="hid_id" value="<%= rset.getString("driver_id")%>">
+                            <form action="delete_feedback">
+                                <input type="submit" value="Delete" name="hid_id_visible" class="form-control  btn-warning m-0 px-3">
+                                <input type="hidden" name="hid_id" value="<%= rset.getString("feedback_id")%>">
                             </form>         
                         </td>
                     </tr>

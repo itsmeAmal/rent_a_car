@@ -43,7 +43,7 @@
                         <a class="nav-link" href="ManageDrivers.jsp">Drivers  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="feedbackManagement.jsp">Feedbacks  |</a>
+                        <a class="nav-link" href="ManageFeedbacks.jsp">Feedbacks  |</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="vehicleManagement.jsp">Vehicles  |</a>
