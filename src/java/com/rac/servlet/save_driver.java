@@ -38,7 +38,6 @@ public class save_driver extends HttpServlet {
             throws ServletException, IOException {
         try {
             response.setContentType("text/html;charset=UTF-8");
-            
             String name = "";
             String email = "";
             String address = "";
@@ -54,14 +53,15 @@ public class save_driver extends HttpServlet {
             driver.setAddress(address);
             driver.setContact(contact);
             driver.setEmail(email);
+            driver.setDetail("1"); 
             
             new DriverDaoImpl().addDriver(driver);
             
             response.sendRedirect("ManageDrivers.jsp");
+            
         } catch (SQLException ex) {
             Logger.getLogger(save_driver.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

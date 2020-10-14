@@ -96,16 +96,16 @@
         <div style="position: absolute; left: 2%; top: 20%; width: 25%">
             <form action="save_driver" method="post">
                 <div class="container">
-                    
+
                     <input type="text" placeholder="Enter Name" name="driver_name" required style=" position: relative; top: 10%; width: 98%;">
                     <br>
-                    
+
                     <input type="text" placeholder="Enter Address" name="driver_address" required style=" position: relative; top: 10%; width: 98%;">
                     <br>
-                    
+
                     <input type="text" placeholder="Enter Contact" name="driver_contact" required style=" position: relative; top: 10%; width: 98%;">
                     <br>
-                    
+
                     <input type="text" placeholder="Enter Email" name="driver_email" required style=" position: relative; top: 10%; width: 98%;">
                     <br>
 
@@ -117,7 +117,7 @@
                 </div>
             </form>
         </div>
-  
+
         <div style="position: absolute; left: 10%; top: 15%; width: 80%; height: 80%; background-color: white; z-index:-1; border-radius: 20px">
         </div>
         <div class="container" style="position: absolute; left: 30%; top: 18%; width: 68%; height: 100%; z-index:-1">
@@ -150,7 +150,7 @@
                         <td>
                             <div>
                                 <%
-                                    if (rset.getString("driver_remark").equalsIgnoreCase("1")) {
+                                if (rset.getString("driver_remark").equalsIgnoreCase(Integer.toString(1))) {
                                 %>
                                 <form action="updateDriverAsInactive">
                                     <input type="submit"  style="width: 150px" value="Deactivate" name="btn_activate" class="form-control btn-danger m-0 px-3">
@@ -159,6 +159,7 @@
                                 <%
                                 } else {
                                 %>
+                                <!--<form action="updateDriverAsActive">-->
                                 <form action="updateDriverAsActive">
                                     <input type="submit"  style="width: 150px" value="Activate" name="btn_deactivate" class="form-control  btn-default m-0 px-3">
                                     <input type="hidden" name="hid_id" value="<%= rset.getString("driver_id")%>">
