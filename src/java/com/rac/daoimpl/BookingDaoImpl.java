@@ -91,4 +91,22 @@ public class BookingDaoImpl implements BookingDao {
         return new commonDaoImpl().getAllRecords(SelectQuery);
     }
 
+    public boolean updateBookingAsPending(int id) throws SQLException {
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("update booking set booking_status=1 where booking_id=?");
+        ps.setInt(1, id);
+        ps.executeUpdate();
+        ps.close();
+        return true;
+    }
+
+    public boolean updateBookingAsCancelled(int id) throws SQLException {
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("update booking set booking_status=0 where booking_id=?");
+        ps.setInt(1, id);
+        ps.executeUpdate();
+        ps.close();
+        return true;
+    }
+
 }
