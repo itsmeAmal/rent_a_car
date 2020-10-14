@@ -59,5 +59,16 @@ public class loginDetailDaoImpl implements loginDetailDao {
         ps.close();
         return true;
     }
+    
+     public int GetAllLogsCount() throws SQLException {
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("select count(login_detail_id) as log_count FROM login_detail");
+        ResultSet rset = ps.executeQuery();
+        int Count = 0;
+        while (rset.next()) {
+            Count = rset.getInt("log_count");
+        }
+        return Count;
+    }
 
 }

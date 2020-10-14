@@ -105,7 +105,6 @@
         <%@include file="activeUsers_menu.jsp" %>
 
         <div style="position: absolute; left: 40%; top: 15%; width: 20%; height: 15px"></div>
-        <%@include file="barChart.jsp" %>
         <%@include file="analiticalTiles_menu.jsp" %>
     </body>
 </html>

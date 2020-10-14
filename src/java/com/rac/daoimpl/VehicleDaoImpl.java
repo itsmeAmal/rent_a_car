@@ -82,6 +82,7 @@ public class VehicleDaoImpl implements VehicleDao {
         ps.close();
         return true;
     }
+
     public boolean updateVedicleAsUnavailable(int id) throws SQLException {
         Connection con = DatabaseConnection.getDatabaseConnection();
         PreparedStatement ps = con.prepareStatement("update vehicles set vehicle_availability=0 where vehicle_id=?");
@@ -89,6 +90,17 @@ public class VehicleDaoImpl implements VehicleDao {
         ps.executeUpdate();
         ps.close();
         return true;
+    }
+
+    public int GetAllAvailableVehiclesCount() throws SQLException {
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("select count(vehicle_id) as c_count FROM vehicles where vehicle_availability=1");
+        ResultSet rset = ps.executeQuery();
+        int Count = 0;
+        while (rset.next()) {
+            Count = rset.getInt("c_count");
+        }
+        return Count;
     }
 
 }

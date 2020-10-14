@@ -99,4 +99,14 @@ public class CustomerDaoImpl implements CustomerDao {
         return true;
     }
 
+    public int GetAllActiveCustomersCount() throws SQLException {
+        Connection con = DatabaseConnection.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("select count(customer_name) as cust_count FROM customers where customer_status=1");
+        ResultSet rset = ps.executeQuery();
+        int Count = 0;
+        while (rset.next()) {
+            Count = rset.getInt("cust_count");
+        }
+        return Count;
+    }
 }

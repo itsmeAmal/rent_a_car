@@ -42,10 +42,10 @@
 //            ResultSet rset4 = userController.getAllUsers();
 //            int i = 0;
         %>
-        <div style="position: absolute; left: 20%; top: 30%; width: 30%; height: 5%">
+        <div style="position: absolute; left: 30%; top: 30%; width: 30%; height: 5%">
             <h4 style="color: #000000"><b>Active Customer Accounts</b></h4>
         </div>
-        <div style="position: absolute; left: 20%; top: 35%; width: 37%; height: 10%">
+        <div style="position: absolute; left: 30%; top: 35%; width: 60%; height: 10%">
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
                 <%
                 ResultSet rset = 

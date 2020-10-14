@@ -1,4 +1,5 @@
 
+<%@page import="com.rac.controller.loginDetailController"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -35,9 +36,9 @@
 
     </head>
     <body>
-        <div class="card p-3 mb-3" style="position: fixed; left: 15px; top: 17%; width: 17%; height: 79%; z-index:-1" >
+        <div class="card p-3 mb-3" style="position: fixed; left: 15px; top: 17%; width: 27%; height: 79%; z-index:-1" >
             <%
-//                ResultSet logHistRset = loginDetailController.getAllLoginDetails();
+                ResultSet logHistRset = loginDetailController.getAllLoginDetails();
             %>
             <div style="position: absolute; left: 5%; top: 5%; width: 70%; height: 5%">
                 <h4 style="color: #000000"><b>Login History</b></h4>
@@ -46,15 +47,15 @@
                 <div class="table-wrapper-scroll-y my-custom-scrollbar-lh">
                     <table class="table table-bordered table-striped mb-0">
                         <tbody>
-                            <%
-//                                while (logHistRset.next()) {
+                            <%                    
+                                while (logHistRset.next()) {
                             %>
                             <tr>
                                 <td></td>
-                                <td><i class="fas fa-edit mr-2 grey-text" aria-hidden="true"></i></td>
+                                <td><i class="fas fa-edit mr-2 grey-text" aria-hidden="true"><%= logHistRset.getString("login_detail_detail")%></i></td>
                             </tr>
-                            <%//                                }
-                                %>
+                            <%     }
+                            %>
                         </tbody>
                     </table>
                 </div>
