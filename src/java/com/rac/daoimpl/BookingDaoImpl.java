@@ -20,9 +20,9 @@ import java.util.ArrayList;
  */
 public class BookingDaoImpl implements BookingDao {
 
-    private String SelectQuery = "select booking_id, booking_date, booking_vehicle_id, "
-            + " booking_employee_id, booking_status, booking_detail, booking_targeted_location, "
-            + " booking_payment_type, booking_payment_amount, booking_customer_id from booking";
+    private String SelectQuery = "select booking_id, booking_date, booking_vehicle_id, booking_employee_id, "
+            + " booking_status, booking_detail, booking_targeted_location, booking_payment_type, "
+            + " booking_payment_amount, booking_customer_id from booking";
 
     @Override
     public boolean AddBooking(Booking Booking) throws SQLException {
@@ -33,14 +33,14 @@ public class BookingDaoImpl implements BookingDao {
                 + "booking_customer_id) values (?,?,?,?,?,?,?,?,?,?)");
         ps.setInt(1, Booking.getId());
         ps.setDate(2, Booking.getDate());
-        ps.setInt(3, Booking.getVehicleId());
+        ps.setString(3, Booking.getVehicleId());
         ps.setInt(4, Booking.getEmployeeId());
         ps.setInt(5, 1);
         ps.setString(6, Booking.getDetails());
         ps.setString(7, Booking.getTargetedLocation());
-        ps.setInt(8, Booking.getPaymentType());
+        ps.setString(8, Booking.getPaymentType());
         ps.setBigDecimal(9, Booking.getPaymentAmount());
-        ps.setInt(10, Booking.getCustomerId());
+        ps.setString(10, Booking.getCustomerId());
         ps.executeUpdate();
         return true;
 
@@ -55,14 +55,14 @@ public class BookingDaoImpl implements BookingDao {
                 + "booking_customer_id=? where booking_id=?");
         ps.setInt(1, Booking.getId());
         ps.setDate(2, Booking.getDate());
-        ps.setInt(3, Booking.getVehicleId());
+        ps.setString(3, Booking.getVehicleId());
         ps.setInt(4, Booking.getEmployeeId());
         ps.setInt(5, 1);
         ps.setString(6, Booking.getDetails());
         ps.setString(7, Booking.getTargetedLocation());
-        ps.setInt(8, Booking.getPaymentType());
+        ps.setString(8, Booking.getPaymentType());
         ps.setBigDecimal(9, Booking.getPaymentAmount());
-        ps.setInt(10, Booking.getCustomerId());
+        ps.setString(10, Booking.getCustomerId());
         ps.executeUpdate();
         return true;
     }

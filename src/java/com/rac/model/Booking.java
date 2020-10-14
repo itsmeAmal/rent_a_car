@@ -16,14 +16,14 @@ public class Booking {
 
     private int Id;
     private Date Date;
-    private int VehicleId;
+    private String VehicleNo;
     private int EmployeeId;
     private int Status;
     private String Details;
     private String TargetedLocation;
-    private int PaymentType;
+    private String PaymentType;
     private BigDecimal PaymentAmount;
-    private int CustomerId;
+    private String CustomerName;
 
     /**
      * @return the Id
@@ -56,15 +56,15 @@ public class Booking {
     /**
      * @return the VehicleId
      */
-    public int getVehicleId() {
-        return VehicleId;
+    public String getVehicleId() {
+        return VehicleNo;
     }
 
     /**
      * @param VehicleId the VehicleId to set
      */
-    public void setVehicleId(int VehicleId) {
-        this.VehicleId = VehicleId;
+    public void setVehicleId(String VehicleId) {
+        this.VehicleNo = VehicleId;
     }
 
     /**
@@ -126,14 +126,14 @@ public class Booking {
     /**
      * @return the PaymentType
      */
-    public int getPaymentType() {
+    public String getPaymentType() {
         return PaymentType;
     }
 
     /**
      * @param PaymentType the PaymentType to set
      */
-    public void setPaymentType(int PaymentType) {
+    public void setPaymentType(String PaymentType) {
         this.PaymentType = PaymentType;
     }
 
@@ -154,15 +154,15 @@ public class Booking {
     /**
      * @return the CustomerId
      */
-    public int getCustomerId() {
-        return CustomerId;
+    public String getCustomerId() {
+        return CustomerName;
     }
 
     /**
      * @param CustomerId the CustomerId to set
      */
-    public void setCustomerId(int CustomerId) {
-        this.CustomerId = CustomerId;
+    public void setCustomerId(String CustomerId) {
+        this.CustomerName = CustomerId;
     }
 
 }

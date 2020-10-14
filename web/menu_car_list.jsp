@@ -28,18 +28,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <%                            
+                        <%
                             while (rset.next()) {
                         %>
                         <tr>
-                            <th scope="row"><%= ++i%></th>
-                            <td><%=rset.getString("vehicle_model_name")%></td>
-                            <td><%=rset.getString("vehicle_reg_no")%></td>
-                            <td>Button</td>
-                        </tr>
-                        <%
-                            }
-                        %>
+                    <form action="save_booking">
+                        <th scope="row"><%= ++i%></th>
+                        <td><%=rset.getString("vehicle_model_name")%></td>
+                        <td><%=rset.getString("vehicle_reg_no")%></td>
+                        <td><input type="submit"  style="width: 150px" value="Book Now" name="book_vehicle" class="form-control  btn-info m-0 px-3">
+                            <input type="hidden" name="hid_id" value="<%=rset.getString("vehicle_reg_no")%>"/>
+                        </td>
+                    </form>
+
+                    </tr>
+                    <%
+                        }
+                    %>
                     </tbody>
                 </table>               
             </div>
