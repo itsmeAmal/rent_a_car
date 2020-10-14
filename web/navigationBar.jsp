@@ -49,10 +49,10 @@
                         <a class="nav-link" href="ManageVehicles.jsp">Vehicles  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="bookingManagement.jsp">Bookings  |</a>
+                        <a class="nav-link" href="ManageBookings.jsp">Bookings  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="paymentManagement.jsp">Payments  |</a>
+                        <a class="nav-link" href="ManagePayments.jsp">Payments  |</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logManagement.jsp">Logs  |</a>
