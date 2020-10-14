@@ -46,7 +46,7 @@
                         <a class="nav-link" href="ManageFeedbacks.jsp">Feedbacks  |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="vehicleManagement.jsp">Vehicles  |</a>
+                        <a class="nav-link" href="ManageVehicles.jsp">Vehicles  |</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="bookingManagement.jsp">Bookings  |</a>
