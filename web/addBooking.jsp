@@ -89,10 +89,6 @@
         </style>
     </head>
     <body>
-        <div style="z-index:20">
-            <%@include file="navigationBar.jsp" %>
-        </div>
-
         <div style="position: absolute; left: 20%; top: 20%; width: 60%">
             <form action="save_booking_with_payment" method="post">
                 <div class="container">

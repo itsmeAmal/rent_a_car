@@ -7,7 +7,9 @@ package com.rac.servlet;
 
 import com.rac.controller.commonController;
 import com.rac.daoimpl.BookingDaoImpl;
+import com.rac.daoimpl.PaymentDaoImpl;
 import com.rac.model.Booking;
+import com.rac.model.Payment;
 import com.rac.model.Vehicle;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -50,6 +52,13 @@ public class save_booking_with_payment extends HttpServlet {
             booking.setTargetedLocation(Location);
             booking.setPaymentAmount(commonController.getBigDecimalOrZeroFromString(booking_payment_amount));
 
+            Payment payment = new Payment();
+            payment.setAmount(commonController.getBigDecimalOrZeroFromString(booking_payment_amount));
+            payment.setRefNo(VehicleNo);
+            payment.setRemark("Cust Name : " + CustomerName);
+            payment.setStatus(1);
+
+            new PaymentDaoImpl().AddPayment(payment);
             new BookingDaoImpl().AddBooking(booking);
 
             response.sendRedirect("home.jsp");
